@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.innerken.reservation.mapper.TableNotifyMapper">
+    <resultMap id="BaseResultMap" type="com.innerken.reservation.model.TableNotify">
+        <id column="id" property="id"/>
+        <result column="active_order_created_at" property="activeOrderCreatedAt"/>
+        <result column="seat_count" property="seatCount"/>
+        <result column="active_order_estimate_dinging_to" property="activeOrderEstimateDingingTo"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, active_order_created_at, seat_count, active_order_estimate_dinging_to
+    </sql>
+
+</mapper>

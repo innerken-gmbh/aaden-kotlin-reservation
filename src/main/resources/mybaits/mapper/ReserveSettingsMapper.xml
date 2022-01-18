@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.innerken.reservation.mapper.ReserveSettingsMapper">
+    <resultMap id="BaseResultMap" type="com.innerken.reservation.model.ReserveSettings">
+        <id column="id" property="id"/>
+        <result column="gap" property="gap"/>
+        <result column="weekly_settings" property="weeklySettings"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, gap, weekly_settings
+    </sql>
+
+</mapper>

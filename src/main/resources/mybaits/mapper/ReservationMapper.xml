@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.innerken.reservation.mapper.ReservationMapper">
+    <resultMap id="BaseResultMap" type="com.innerken.reservation.model.Reservation">
+        <id column="id" property="id"/>
+        <result column="table_id" property="tableId"/>
+        <result column="from_date_time" property="fromDateTime"/>
+        <result column="to_date_time" property="toDateTime"/>
+        <result column="person_count" property="personCount"/>
+        <result column="title" property="title"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
+        <result column="email" property="email"/>
+        <result column="tel" property="tel"/>
+        <result column="company" property="company"/>
+        <result column="note" property="note"/>
+        <result column="child_count" property="childCount"/>
+        <result column="use_stroller" property="useStroller"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, table_id, from_date_time, to_date_time, person_count, title, first_name,
+last_name, email, tel, company, note, child_count, use_stroller
+    </sql>
+
+    <select id="getReservation" resultMap="com.innerken.reservation.dto.requestDTO.ReservationRequestDTO">
+        select *
+        from reservation re
+        where 1=1
+    </select>
+
+    <select id="getCanceledTime" resultMap="com.innerken.reservation.dto.requestDTO.ReservationRequestDTO">
+        update reservation  set cancelled_at = CURRENT_TIMESTAMP
+        where id = #{id}
+    </select>
+
+</mapper>
